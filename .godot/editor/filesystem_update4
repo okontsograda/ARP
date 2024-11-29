@@ -2,4 +2,4 @@ res://Tile Maps/grass_01.tscn
 res://Player/Scripts/state_walk.gd
 res://playground.tscn
 res://Player/player.tscn
-res://Player/Scripts/state_idle.gd
+res://Player/Scripts/state_attack.gd
