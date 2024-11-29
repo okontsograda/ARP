@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs8omywku6pf0"]
+[gd_scene load_steps=32 format=3 uid="uid://cs8omywku6pf0"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_w7dtb"]
 [ext_resource type="Texture2D" uid="uid://ejkqkseko8qj" path="res://Player/Sprites/PlayerSprite02.png" id="2_55hdb"]
@@ -11,8 +11,48 @@
 [ext_resource type="AudioStream" uid="uid://bbxxpfr3ih11v" path="res://Player/Audio/sword_swoosh.mp3" id="8_k4vry"]
 [ext_resource type="Script" path="res://GeneralNodes/HurtBox/hurt_box.gd" id="10_6ofiw"]
 [ext_resource type="Script" path="res://Player/Scripts/player_interactions.gd" id="10_guoqi"]
+[ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="11_4u4ak"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ek83g"]
+
+[sub_resource type="Animation" id="Animation_048x8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:show_behind_parent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_yxbub"]
 resource_name = "attack_down"
@@ -168,45 +208,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_048x8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:show_behind_parent")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_b7rpo"]
@@ -529,6 +530,8 @@ script = ExtResource("6_ofvw6")
 attack_sound = ExtResource("8_k4vry")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_limits = true
+script = ExtResource("11_4u4ak")
 
 [node name="Audio" type="Node2D" parent="."]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://77t7sck6xdhf"]
+
+[ext_resource type="Texture2D" uid="uid://cfx2vn28nhe81" path="res://Enemies/Hyena/Hyena_idle.png" id="1_rbiaa"]
+
+[node name="Hyena" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, -23)
+texture = ExtResource("1_rbiaa")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

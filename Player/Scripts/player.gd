@@ -8,16 +8,17 @@ var cardinal_direction: Vector2 = Vector2.DOWN
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
-signal DirectionChanged( new_direction : Vector2 )
+signal direction_changed( new_direction : Vector2 )
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#Used for determining direction (uses x,y cords)
 	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -29,7 +30,7 @@ func _process(delta):
 	pass
 
 # Called every physics tic
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 
 func SetDirection() -> bool:
@@ -40,11 +41,11 @@ func SetDirection() -> bool:
 	var new_dir = DIR_4[ direction_id ]
 	
 	# If direction doesn't change return
-	if new_dir == cardinal_direction || new_dir	 == Vector2.ZERO:
+	if new_dir == cardinal_direction:
 		return false	
 	
 	cardinal_direction = new_dir
-	DirectionChanged.emit( new_dir )
+	direction_changed.emit( new_dir )
 	
 	# Flip the sprite if moving left, otherwise ensure it's not flipped
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1

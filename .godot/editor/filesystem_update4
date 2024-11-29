@@ -1,12 +1,6 @@
-res://Player/player.tscn
-res://Player/Scripts/state_walk.gd
-res://Player/Scripts/state_attack.gd
-res://GeneralNodes/Hitbox/hit_box.tscn
-res://GeneralNodes/Hitbox/hit_box.gd
-res://GeneralNodes/HurtBox/hurt_box.tscn
-res://GeneralNodes/HurtBox/hurt_box.gd
-res://Props/Plants/plant.tscn
-res://Props/Plants/plant.gd
 res://playground.tscn
-res://Player/Scripts/player_interactions.gd
-res://Player/Scripts/player.gd
+res://Player/Scripts/state_walk.gd
+res://Player/player.tscn
+res://Enemies/Slime/Slime.tscn
+res://Enemies/Scripts/enemy.gd
+res://Enemies/Scripts/States/enemy_state_destroy.gd
