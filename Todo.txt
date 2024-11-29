@@ -1,0 +1,3 @@
+Pixel Rust
+
+- fix attacking while walking
