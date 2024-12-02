@@ -1,9 +1,9 @@
-HitBox
+Node
 AnimationPlayer
+CollisionShape2D
+HitBox
 Sprite2D
 AudioStreamPlayer2D
-Node
-CollisionShape2D
 CharacterBody2D
 Node2D
 CanvasModulate
@@ -12,4 +12,3 @@ StaticBody2D
 Area2D
 Camera2D
 TileMap
-AnimationTree
