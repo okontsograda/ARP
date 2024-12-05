@@ -656,6 +656,7 @@ attack_sound = ExtResource("8_k4vry")
 script = ExtResource("11_h6ptp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(-5, -5)
 editor_draw_limits = true
 script = ExtResource("11_4u4ak")
 
